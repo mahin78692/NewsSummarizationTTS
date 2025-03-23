@@ -13,3 +13,4 @@ pydub==0.25.1
 sentence-transformers==3.4.1
 streamlit==1.43.2
 python-dotenv==1.0.0
+huggingface_hub
