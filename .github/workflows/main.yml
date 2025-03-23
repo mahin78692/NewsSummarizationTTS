@@ -1,0 +1,25 @@
+name: Deploy to Hugging Face Spaces
+
+on:
+  push:
+    branches:
+      - main  # Runs deployment when code is pushed to 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # Clones the GitHub repository
+
+      - name: Install Hugging Face CLI
+        run: pip install huggingface_hub  # Installs Hugging Face CLI
+
+      - name: Authenticate with Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}  # Uses the secret token stored in GitHub
+        run: huggingface-cli login --token $HF_TOKEN
+
+      - name: Push to Hugging Face Space
+        run: huggingface-cli repo push --repo-type space --repo-id mahin78692/NewsSummarizationTTS
