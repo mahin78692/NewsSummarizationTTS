@@ -1,0 +1,29 @@
+# Ignore virtual environment
+venv/
+.env
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs and temp files
+logs/
+*.log
+*.wav
+*.bin
+*.pkl
+*.h5
+*.pt
+
+# Ignore IDE and OS-specific files
+.DS_Store
+.vscode/
+*.swp
+*.swo
+
+# Ignore dependencies
+node_modules/
+*.tar.gz
+*.zip
